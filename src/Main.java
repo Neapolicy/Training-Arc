@@ -7,7 +7,7 @@ public class Main {
         Card c = new Card();
         String val = c.getValue();
         deck.add(val);
-        System.out.println(deck);
+        System.out.println(c.getColor() + " " + c.getSuit() + " " + deck);
        /* Scanner s = new Scanner(System.in);
         System.out.println("Would you like to play Poker or Old Maid?");
         String answer = s.nextLine();

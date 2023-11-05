@@ -6,7 +6,6 @@ public class Card {
     private String value;
     private String color;
     private String suit;
-    private boolean joker;
     Map<Integer, String> dictionary = new HashMap<>();
     Map<Integer, String> dictionaryTwo = new HashMap<>();
     Map<Integer, String> dictionaryThree = new HashMap<>();
@@ -23,7 +22,6 @@ public class Card {
 
     public Card(boolean joker) // creates a joker
     {
-        this.joker = joker;
         putValues();
         value = dictionary.get(15);
     }
