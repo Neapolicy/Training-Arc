@@ -15,7 +15,7 @@ public class Card {
         putValues();
         putColor();
         putSuite();
-        value = dictionary.get(rand.nextInt(2, 15));
+        value = dictionary.get(rand.nextInt(2, 15)); // it should never roll 15, because then you would get a joker, and you don't want that
         color = dictionaryTwo.get(rand.nextInt(1, 3));
         suit = dictionaryThree.get(rand.nextInt(1, 5));
     }
