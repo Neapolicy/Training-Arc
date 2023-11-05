@@ -3,9 +3,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Card {
-    private int value;
+    private String value;
     private String color;
-    private int suit;
+    private String suit;
     private boolean joker;
     Map<Integer, String> dictionary = new HashMap<>();
     Map<Integer, String> dictionaryTwo = new HashMap<>();
@@ -16,16 +16,16 @@ public class Card {
         putValues();
         putColor();
         putSuite();
-        dictionary.get(rand.nextInt(2, 15));
-        dictionaryTwo.get(rand.nextInt(1, 3));
-        dictionaryThree.get(rand.nextInt(1, 5));
+        value = dictionary.get(rand.nextInt(2, 15));
+        color = dictionaryTwo.get(rand.nextInt(1, 3));
+        suit = dictionaryThree.get(rand.nextInt(1, 5));
     }
 
     public Card(boolean joker) // creates a joker
     {
         this.joker = joker;
         putValues();
-        dictionary.get(15);
+        value = dictionary.get(15);
     }
     public void putValues() // puts in the values
     {
@@ -64,12 +64,12 @@ public class Card {
         return color;
     }
 
-    public int getSuit()
+    public String getSuit()
     {
         return suit;
     }
 
-    public int getValue()
+    public String getValue()
     {
         return value;
     }
