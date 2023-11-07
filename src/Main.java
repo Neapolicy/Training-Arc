@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner s = new Scanner(System.in);
-        printSlow("Would you like to play Poker or Old Maid?");
+        printSlow("Would you like to play Poker or Old Maid?\n");
         String answer = s.nextLine();
         answer = answer.toLowerCase();
         s.close();

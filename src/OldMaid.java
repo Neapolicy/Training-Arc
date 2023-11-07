@@ -10,6 +10,8 @@ public class OldMaid
     {
         replace();
         addCard();
+        one.setDeck(removeDoubles(one.getDeck()));
+        two.setDeck(removeDoubles(two.getDeck()));
         System.out.println(one.getDeck());
         System.out.print(two.getDeck());
     }
@@ -54,5 +56,18 @@ public class OldMaid
     public void game()
     {
 
+    }
+
+    public ArrayList<String> removeDoubles(ArrayList<String> deck)
+    {
+        ArrayList<String> actualList = new ArrayList<String>();
+        for (String element : deck)
+        {
+            if (!actualList.contains(element))
+            {
+                actualList.add(element);
+            }
+        }
+        return actualList;
     }
 }
