@@ -7,6 +7,7 @@ public class OldMaid
     private final Scanner s = new Scanner(System.in);
     private Random rand = new Random();
     private int choice;
+    private String turn;
     private String picked;
     private int b;
     private int i;
@@ -55,10 +56,12 @@ public class OldMaid
     public void game() {
         while (!one.getDeck().isEmpty() && !two.getDeck().isEmpty())
         {
+            turn = "one";
             System.out.println("Player one, this is your deck: " + (one.getDeck()));
             pickCard();
             removeCard(choice, "one");
             addCard(picked);
+            turn = "two";
             System.out.println("Player two, this is your deck: " + (two.getDeck())); // player one turn end
             pickCard("two");
             removeCard(choice, "two");  // player two turn end, back to player one
@@ -67,8 +70,12 @@ public class OldMaid
     public void pickCard() // picks a card, for player one
     {
         System.out.println("Player one, your turn, player two has " + (two.getDeck().size()) + " cards");
-        System.out.println("Which card will you pick?");
+        System.out.println("Which card will you pick? (-1) to add more cards");
         choice = s.nextInt();
+        if (choice == -1)
+        {
+            addMoreCards(turn);
+        }
         limitTest(choice, (two.getDeck().size()));
     }
     public void addCard(String cardVal)
@@ -90,8 +97,12 @@ public class OldMaid
     public void pickCard(String p2) //pick card but for player two instead
     {
         System.out.println("Player two, your turn, player one has " + (one.getDeck().size()) + " cards");
-        System.out.println("Which card will you pick?");
+        System.out.println("Which card will you pick? (-1 to add more cards)");
         choice = s.nextInt();
+        if (choice == -1)
+        {
+            addMoreCards(turn);
+        }
         limitTest(choice, (one.getDeck().size()));
     }
 
@@ -129,15 +140,17 @@ public class OldMaid
         return actualList;
     }
 
-    public void addMoreCards()
+    public void addMoreCards(String player)
     {
-        Collections.sort(one.getDeck());
-        Collections.sort(two.getDeck());
-        if (!one.getDeck().equals(two.getDeck()))
+        if (player.equals("one"))
         {
-            i = rand.nextInt(2);
-            addCard();
+            i = 1;
         }
+        else
+        {
+            i = 2;
+        }
+        addCard();
     }
     // layout for removing cards for realsies: check the value of the card that you draw
     // iterate through a list that compares value of card that you just drew
