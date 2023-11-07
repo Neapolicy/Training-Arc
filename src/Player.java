@@ -14,7 +14,7 @@ public class Player {
 
     public Player(boolean b) // player for old maid
     {
-        for (int i = 0; i  < 5; i++) {
+        for (int i = 0; i  < 4; i++) {
             Card c = new Card();
             String val = c.getValue();
             deck.add(val);

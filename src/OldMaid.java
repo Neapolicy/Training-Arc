@@ -58,7 +58,7 @@ public class OldMaid
 
     }
 
-    public ArrayList<String> removeDoubles(ArrayList<String> deck)
+    public ArrayList<String> removeDoubles(ArrayList<String> deck) // gets rid of any duplicate cards
     {
         ArrayList<String> actualList = new ArrayList<String>();
         for (String element : deck)
@@ -70,4 +70,7 @@ public class OldMaid
         }
         return actualList;
     }
+    // layout for removing cards for realies: check the value of the card that you draw
+    // iterate through a list that compares value of card that you just drew
+    // if the values match, remove the cards, else, don't
 }
