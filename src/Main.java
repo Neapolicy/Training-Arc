@@ -17,10 +17,10 @@ public class Main {
         }
     }
 
-    static void printSlow(String test)
+    static void printSlow(String text)
     {
-        for (int i = 0; i < test.length(); i++) {
-            System.out.print(test.charAt(i));
+        for (int i = 0; i < text.length(); i++) {
+            System.out.print(text.charAt(i));
             try {
                 Thread.sleep(45L);    // time interval in milliseconds
             } catch (InterruptedException e) {
