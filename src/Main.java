@@ -6,7 +6,6 @@ public class Main {
         printSlow("Would you like to play Poker or Old Maid?\n");
         String answer = s.nextLine();
         answer = answer.toLowerCase();
-        s.close();
         if (answer.contains("poker"))
         {
             Poker p = new Poker();
@@ -17,7 +16,7 @@ public class Main {
         }
     }
 
-    static void printSlow(String text)
+    private static void printSlow(String text)
     {
         for (int i = 0; i < text.length(); i++) {
             System.out.print(text.charAt(i));
