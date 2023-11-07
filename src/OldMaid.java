@@ -1,15 +1,16 @@
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+
 public class OldMaid
 {
     private Player one = new Player(true);
     private Player two = new Player(true);
     private final Scanner s = new Scanner(System.in);
+    private Random rand = new Random();
     private int choice;
     private String picked;
     private int b;
     private int i;
+
     public OldMaid()
     {
         replace();
@@ -21,7 +22,6 @@ public class OldMaid
 
     public void replace()
     {
-        Random rand = new Random();
         i = rand.nextInt(2);
         if (i == 1)
         {
@@ -127,6 +127,17 @@ public class OldMaid
             }
         }
         return actualList;
+    }
+
+    public void addMoreCards()
+    {
+        Collections.sort(one.getDeck());
+        Collections.sort(two.getDeck());
+        if (!one.getDeck().equals(two.getDeck()))
+        {
+            i = rand.nextInt(2);
+            addCard();
+        }
     }
     // layout for removing cards for realsies: check the value of the card that you draw
     // iterate through a list that compares value of card that you just drew
