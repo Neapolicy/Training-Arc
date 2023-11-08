@@ -57,12 +57,10 @@ public class OldMaid
         while (!one.getDeck().isEmpty() && !two.getDeck().isEmpty())
         {
             turn = "one";
-            System.out.println("Player one, this is your deck: " + (one.getDeck()));
             pickCard();
             removeCard(choice, "one");
             addCard(picked);
-            turn = "two";
-            System.out.println("Player two, this is your deck: " + (two.getDeck())); // player one turn end
+            turn = "two";  // player one turn end
             pickCard("two");
             removeCard(choice, "two");  // player two turn end, back to player one
         }
